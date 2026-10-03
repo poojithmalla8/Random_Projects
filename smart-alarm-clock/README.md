@@ -1,6 +1,6 @@
 # Smart Alarm Clock
 
-![Smart alarm clock](images/hero.jpg)
+![Smart alarm clock](images/clock-illustration.svg)
 
 ## Description
 
@@ -33,7 +33,7 @@ serves a tiny web page so you can set alarms from your phone.
 | `circuit-schematic.svg` | Color-coded wiring diagram (opens in any browser) |
 | `system-block-diagram.svg` | High-level architecture overview |
 | `wiring-for-dummies.md` | Step-by-step wiring guide, assumes zero experience |
-| `images/hero.jpg` | Render of the finished clock |
+| `images/clock-illustration.svg` | Illustration of the finished clock |
 | `BOM.md` | Full parts list with specs and quantities |
 | `wiring.md` | Pin-by-pin wiring tables + block diagram |
 
