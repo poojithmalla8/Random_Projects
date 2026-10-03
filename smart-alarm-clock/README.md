@@ -1,8 +1,28 @@
-# Smart Alarm Clock — Build Guide
+# Smart Alarm Clock
 
-A WiFi-connected alarm clock you build yourself: ESP32, 2.4" color display,
-battery-backed real-time clock, sunrise-simulation LEDs, and a custom
-3D-printed enclosure.
+![Smart alarm clock](images/hero.jpg)
+
+## Description
+
+A WiFi-connected smart alarm clock you build yourself from off-the-shelf
+parts for around $25–40. An ESP32 runs the show: it syncs time over WiFi
+(NTP), falls back to a battery-backed real-time clock when offline, and
+serves a tiny web page so you can set alarms from your phone.
+
+**What it does:**
+- Big 2.4" color display — time, date, room temperature & humidity, alarms
+- 5 alarms, settable on-device (3-button menu) or from your phone's browser
+- Sunrise simulation — an LED strip fades from deep orange to bright white
+  in the 10 minutes before your alarm
+- Buzzer melodies, 9-minute snooze (any button), dismiss (hold MENU 2 s)
+- Screen brightness control; all settings survive reboots
+- Custom 3D-printed enclosure with mounts for every component
+
+**How it's wired** (see `circuit-schematic.svg` and `wiring-for-dummies.md`):
+
+![System overview](system-block-diagram.svg)
+
+![Wiring diagram](circuit-schematic.svg)
 
 ## What's in this folder
 
@@ -10,6 +30,10 @@ battery-backed real-time clock, sunrise-simulation LEDs, and a custom
 |------|------------|
 | `smart_alarm_clock.ino` | Complete ESP32 firmware — upload with Arduino IDE |
 | `enclosure.scad` | Parametric 3D model — open in OpenSCAD, export STLs, print |
+| `circuit-schematic.svg` | Color-coded wiring diagram (opens in any browser) |
+| `system-block-diagram.svg` | High-level architecture overview |
+| `wiring-for-dummies.md` | Step-by-step wiring guide, assumes zero experience |
+| `images/hero.jpg` | Render of the finished clock |
 | `BOM.md` | Full parts list with specs and quantities |
 | `wiring.md` | Pin-by-pin wiring tables + block diagram |
 
@@ -28,9 +52,12 @@ battery-backed real-time clock, sunrise-simulation LEDs, and a custom
 
 ## 2. Wire it up
 
-Follow `wiring.md`. Quick version: TFT on the SPI pins (5/16/17/23/18/4),
-RTC on I²C (21/22), buzzer on 25, buttons on 32/33/27 (other leg to GND),
-DHT22 data on 26, LED strip data on 13. Everything runs off USB 5 V.
+Follow `wiring-for-dummies.md` (beginner-friendly, step-by-step) with
+`circuit-schematic.svg` open beside it — or use the condensed pin tables in
+`wiring.md` if you've done this before. Quick version: TFT on the SPI pins
+(5/16/17/23/18/4), RTC on I²C (21/22), buzzer on 25, buttons on 32/33/27
+(other leg to GND), DHT22 data on 26, LED strip data on 13. Everything runs
+off USB 5 V.
 
 ## 3. Flash the firmware
 
