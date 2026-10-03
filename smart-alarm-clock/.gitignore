@@ -1,0 +1,13 @@
+# Build artifacts
+*.stl
+*.png
+build/
+# Arduino IDE
+*.elf
+*.bin
+*.hex
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
